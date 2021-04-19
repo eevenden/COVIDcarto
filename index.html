@@ -32,14 +32,16 @@
   <!-- Add a div with id="mapId" to give the map somewhere to go -->
     <div id="mapId"></div>
 
-    <script>
-    // Create a variable called "map" to house your Leaflet map and all of its functionality
-    var map = L.map("mapId").setView([37.754700, -122.420790], 14);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
+      <script>
+    // Mapbox GL JS requires a token
+    mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
+    /* Initialize the map with:*/
+    var map = new mapboxgl.Map({
+      container: 'mapId',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-122.420790, 37.754700],
+      zoom: 14
+    });
   </script>
 </body>
 

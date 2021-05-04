@@ -48,14 +48,17 @@
   <div class='map-overlay' id='features'><h2>US # of Toddlers </h2><div id='pd'><p>Hover over a state!</p></div></div>
   
   <script>
-    // Add your access token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
     
-    // Create a variable called "map" to house your mao
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/eevenden/cknqe7nrf1bad17oyo4bwegc1', // replace this with your style URL
+      style: 'mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd', // replace this with your style URL
     });
+      
+    map.on('load', function() {
+      // make a pointer cursor
+      map.getCanvas().style.cursor = 'default';
+      // set map bounds to the continental US
+      map.fitBounds([[-133.2421875, 16.972741], [-47.63671875, 52.696361]]);
       
 
     </script>

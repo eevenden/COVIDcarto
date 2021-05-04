@@ -59,10 +59,22 @@
         zoom: 4 // starting zoom
       });
     
-    //Add popup
-    popup.setLngLat(feature.geometry.coordinates)
-      .setHTML(feature.properties.Name)
-      .addTo(map);
+      // Write function for mouse movement over the states - updates information in the panel. 
+      map.on('mousemove', function(e) {
+        var states = map.queryRenderedFeatures(e.point, {
+          layers: ['statedata']
+        });
+        
+        if (states.length > 0) {
+          document.getElementById('pd').innerHTML = '<h3><strong>' + 
+            states[0].properties.name + '</strong></h3><p><strong><em>' + 
+            states[0].properties.density + '</strong> people per square mile</em></p>';
+        } else {
+          document.getElementById('pd').innerHTML = 
+            '<p>Hover over a state!</p>';
+        }
+      });     
+
 
     
     // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol

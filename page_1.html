@@ -54,6 +54,11 @@
         center: [-122.420790, 37.754700],
         zoom: 14
       });
+      
+      map.on('load', function() {
+        var url = 'http://your_geojson_file.com/some_file.geojson';
+        map.addSource('source_id', { type: 'geojson', data: url});
+      });
     </script>
 
   </body>

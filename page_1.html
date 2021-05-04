@@ -2,39 +2,57 @@
 
 <html>
 
-<head>
-  <title>COVIDcarto</title>
- 
-  </style>
-  <!-- Adding styling info for page layout by reading in a CSS file -->
-  <link rel="stylesheet" href="styles.css">
-  
-</head>
+  <head>
+    <title>Studio Week 3</title>
+    <!-- Add Mapbox GL JS JavaScript file -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.js'></script>
+    <!-- Add in the Mapbox GL JS CSS file -->
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.8.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v3.0.11/turf.min.js'></script>
+    <!-- Add CSS styling info for the map -->
+    <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-<body>
-  <h1> COVIDcarto </h1>
-  <h2> Sample Page 1</h2>
-  <!-- Add multiple pages to web page-->
-  <!-- active class displays the grey box around current page-->
-  <ul>
-    <li><a href="index.html" target="_self">ESRI Storymap</a></li>
-    <li><a class="active" href="page_1" target="_self">Mapbox</a></li>
-    <li><a href="page_2" target="_self">About</a></li>
-  </ul>
-  <br>
-    <script>
-    // Mapbox GL JS requires a token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
-    /* Initialize the map with:*/
-    var map = new mapboxgl.Map({
-      container: 'mapId',
-      style: 'mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd,
-      center: [-122.420790, 37.754700],
-      zoom: 14
-    });
-  </script>
+      #map {
+        position: absolute;
+        top: 200px;
+        bottom: 0;
+        width: 100%;
+      }
 
-</body>
+    </style>
+    <!-- Adding styling info for page layout by reading in a CSS file -->
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+  <body>
+    <h1> COVIDcarto </h1>
+    <h2> Sample Page 1</h2>
+    <!-- Add multiple pages to web page-->
+    <!-- active class displays the grey box around current page-->
+    <ul>
+      <li><a href="index.html" target="_self">ESRI Storymap</a></li>
+      <li><a class="active" href="page_1" target="_self">Mapbox</a></li>
+      <li><a href="page_2" target="_self">About</a></li>
+    </ul>
+    <br>
+      <script>
+      // Mapbox GL JS requires a token
+      mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
+      /* Initialize the map with:*/
+      var map = new mapboxgl.Map({
+        container: 'mapId',
+        style: 'mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd,
+        center: [-122.420790, 37.754700],
+        zoom: 14
+      });
+    </script>
+
+  </body>
 
 </html>
 

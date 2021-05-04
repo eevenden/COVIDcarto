@@ -58,6 +58,11 @@
         center: [-98.765106, 38.361566], // starting position [lng, lat]
         zoom: 4 // starting zoom
       });
+    
+    //Add popup
+    popup.setLngLat(feature.geometry.coordinates)
+      .setHTML(feature.properties.Name)
+      .addTo(map);
 
     
     // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol

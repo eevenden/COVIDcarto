@@ -22,21 +22,6 @@
       height: 100%;
       width: 100%;
     } 
-    
-    #fly {
-      display: block;
-      position: relative;
-      margin: 0px auto;
-      width: 50%;
-      height: 40px;
-      padding: 10px;
-      border: none;
-      border-radius: 3px;
-      font-size: 12px;
-      text-align: center;
-      color: #fff;
-      background: #ee8a65;
-    }
   
   </style>
   
@@ -55,7 +40,7 @@
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
   
-  <h1>Studio Week 3<br> Interactions with Mapbox GL JS </h1>
+  <h1>COVIDcarto<br> Mapbox </h1>
   <!-- Add multiple pages to web page-->
   <!-- active class displays the grey box around current page-->
   <ul>
@@ -66,7 +51,6 @@
   <br>
 
   <div id="map"></div>
-  <button id="fly">Fly</button>
   <script>
 
     // Initialize the map
@@ -74,15 +58,10 @@
       var map = new mapboxgl.Map({
         container: 'map', // container id
         style: 'mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd', // stylesheet location
-        center: [-122.44, 37.76], // starting position [lng, lat]
-        zoom: 11 // starting zoom
+        center: [-98.765106, 38.361566], // starting position [lng, lat]
+        zoom: 6 // starting zoom
       });
 
-    // Add a popup: https://docs.mapbox.com/mapbox-gl-js/example/popup/ 
-      var popup = new mapboxgl.Popup({closeOnClick: false})
-      .setLngLat([-122.44, 37.76])
-      .setHTML("<b>Poppin off</b>")
-      .addTo(map);
     
     // Add pan and zoom controls: https://docs.mapbox.com/mapbox-gl-js/api/#map#addcontrol
       map.doubleClickZoom.enable();

@@ -26,22 +26,21 @@
   </ul>
   <br>
 
-  <!-- Add a div to give the map somewhere to go -->
-    <div id='map'></div>
- 
+    <!-- Container for the map -->
+    <div id="mapId"></div>
+
     <script>
-    // Add your access token
-    mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
-    
-    // Create a variable called "map" to house your mao
-    var map = new mapboxgl.Map({
-      container: 'map', // container id
-      style: 'mapbox://styles/eevenden/cknqe7nrf1bad17oyo4bwegc1',
-      center: [-98.76691991433269, 38.36494346761157],
-      scale: 4
-      // replace this with your style URL
-    });
-      
+    // Set your Mapbox access token
+      mapboxgl.accessToken = "pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA";
+
+      var map = new mapboxgl.Map({
+        center: [-93, 37],
+        zoom: 4,
+        style: "mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd",
+        container: "mapId"
+      });
+
+    </script>
   </script>
 </body>
 </html>

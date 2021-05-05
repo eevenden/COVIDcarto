@@ -27,9 +27,13 @@
   <br>
 
   <!-- Add a div to give the map somewhere to go -->
-    <div id='map'></div>
-    <div class='map-overlay' id='features'><h2>US population density</h2><div id='pd'><p>Hover over a state!</p></div></div>
-    <div class='map-overlay' id='legend'><p>Legend</p></div>
+  <div id='map'></div>
+  <div class='map-overlay' id='features'>
+    <h2>US population density</h2>
+    <div id='pd'>
+      <p>Hover over a state!</p></div>
+  </div>
+  <div class='map-overlay' id='legend'><p>Legend</p></div>
   
     <script>
     // Add your access token
@@ -38,7 +42,7 @@
     // Create a variable called "map" to house your mao
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/eevenden/cknqe7nrf1bad17oyo4bwegc1', // replace this with your style URL
+      style: 'mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd', // replace this with your style URL
     });
       
 

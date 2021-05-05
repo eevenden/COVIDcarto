@@ -16,9 +16,7 @@
 </head>
 
 <body>
-  
   <h1> COVIDcarto </h1>
-  <h2> Sample Map </h2>
   
   <!-- Add multiple pages to web page-->
   <!-- active class displays the grey box around current page-->
@@ -29,9 +27,12 @@
   </ul>
   <br>
   
-  <div id='map'></div>
-  <div class='map-overlay' id='features'><h2># of Toddlers</h2><div id='pd'><p>Hover over a state!</p></div></div>
-  <div class='map-overlay' id='legend'><p>Legend</p></div>
+  <div id="map"></div>
+  <div class="map-overlay" id="features">
+    <h2>US population density</h2>
+    <div id="pd"><p>Hover over a state!</p></div>
+  </div>
+  <div class="map-overlay" id="legend"></div>
   
   <script>
     // define access token
@@ -47,7 +48,6 @@
     map.on('load', function () {
       // make a pointer cursor
       map.getCanvas().style.cursor = 'default';
-      
       // set map bounds to the continental US
       map.fitBounds([
         [-133.2421875, 16.972741],
@@ -115,6 +115,6 @@
         }
       });
     });
-</script>
+  </script>
 </body>
 </html>

@@ -37,14 +37,14 @@
     // Add your access token
     mapboxgl.accessToken = 'pk.eyJ1IjoiZWV2ZW5kZW4iLCJhIjoiY2tsaWV4ZjgxMDZ5bTJwbHlud2ZpbmdrayJ9.YncVdwMOnwOqwF24Pm5ZhA';
     
+    //create map
     var map = new mapboxgl.Map({
       container: 'map', // container id
-      style: 'mapbox://styles/eevenden/cko90eoa609v718mp7lxvfvdd', // replace this with your style URL
-      center: [-98.349623, 38.353192], // starting position [lng, lat]
-      zoom: 4 // starting zoom
+      style: 'mapbox://styles/examples/cjgioozof002u2sr5k7t14dim' // map style URL from Mapbox Studio
     });
-      
-    map.on('load', function() {
+    
+    // wait for map to load before adjusting it
+    map.on('load', function () {
       // make a pointer cursor
       map.getCanvas().style.cursor = 'default';
       
@@ -54,25 +54,33 @@
         [-47.63671875, 52.696361]
       ]);
       
-      // make list of legend values
-      var layers = ['0-10', 
-                    '10-20', 
-                    '20-50', 
-                    '50-100', 
-                    '100-200', 
-                    '200-500', 
-                    '500-1000', 
-                    '1000+'];
-      var colors = ['#FFEDA0', 
-                    '#FED976', 
-                    '#FEB24C', 
-                    '#FD8D3C', 
-                    '#FC4E2A', 
-                    '#E31A1C', 
-                    '#BD0026', 
-                    '#800026'];
+      // make a pointer cursor
+      map.getCanvas().style.cursor = 'default';
       
-      // join the two lists in a panel
+      // define layer names
+      var layers = [
+        '0-10',
+        '10-20',
+        '20-50',
+        '50-100',
+        '100-200',
+        '200-500',
+        '500-1000',
+        '1000+'
+      ];
+      
+      var colors = [
+        '#FFEDA0',
+        '#FED976',
+        '#FEB24C',
+        '#FD8D3C',
+        '#FC4E2A',
+        '#E31A1C',
+        '#BD0026',
+        '#800026'
+      ];
+      
+      // create legend
       for (i = 0; i < layers.length; i++) {
         var layer = layers[i];
         var color = colors[i];
@@ -80,20 +88,33 @@
         var key = document.createElement('span');
         key.className = 'legend-key';
         key.style.backgroundColor = color;
+ 
         var value = document.createElement('span');
         value.innerHTML = layer;
         item.appendChild(key);
         item.appendChild(value);
         legend.appendChild(item);
       }
-   
-    
-    // Write function for mouse movement over the states - updates information in the panel.
-         
+      
+      // change info window on hover
+      map.on('mousemove', function (e) {
+        var states = map.queryRenderedFeatures(e.point, {
+          layers: ['statedata']
+        });
+        
+        if (states.length > 0) {
+          document.getElementById('pd').innerHTML =
+            '<h3><strong>' +
+            states[0].properties.name +
+            '</strong></h3><p><strong><em>' +
+            states[0].properties.density +
+            '</strong> people per square mile</em></p>';
+        } else {
+          document.getElementById('pd').innerHTML =
+            '<p>Hover over a state!</p>';
+        }
+      });
     });
-  
   </script>
-
 </body>
-
 </html>

@@ -100,7 +100,7 @@
             // Write function for mouse movement over the states - updates information in the panel. 
       map.on('mousemove', function(e) {
         var states = map.queryRenderedFeatures(e.point, {
-          layers: ['Toddler_Test_Cartogram']
+          layers: ['toddler-test-cartogram']
         });
         
         if (states.length > 0) {

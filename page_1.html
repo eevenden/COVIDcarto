@@ -89,20 +89,7 @@
    
     
     // Write function for mouse movement over the states - updates information in the panel.
-      map.on('mousemove', function(e) {
-        var states = map.queryRenderedFeatures(e.point, {
-          layers: ['toddler-test-cartogram']
-        });
-        
-        if (states.length > 0) {
-          document.getElementById('pd').innerHTML = '<h3><strong>' + 
-            states[0].properties.STATE_NAME + '</strong></h3><p><strong><em>' + 
-            states[0].properties.AGE_UNDER5 + '</strong> toddlers</em></p>';
-        } else {
-          document.getElementById('pd').innerHTML = 
-            '<p>Hover over a state!</p>';
-        }
-      });     
+         
     });
   
   </script>

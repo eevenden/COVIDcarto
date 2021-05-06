@@ -1,5 +1,7 @@
 body {
-  background-color: white;
+  background-color: white,
+  margin: 1;
+  padding: 1;
 }
 
 h1 {
@@ -7,52 +9,34 @@ h1 {
   font-family: 	Courier New;
 }
 
-h2 {
-  color: grey;
+h2,
+h3 {
+  color: black;
   font-family: 	Courier New;
+  margin: 10px;
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1em;
 }
 
 p {
   color: grey;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.85em;
+  margin: 10px;
+  text-align: left;
 }
 
-ul {
- list-style-type: none;
- margin: 1px;
- padding: 1px;
- overflow: hidden;
- background-color: white;
-}
-
-
-li {
- float: left;
- border-right: 2px solid white;
- font-family:	Courier New;
-}
-
-/* Add a border to all( but not the last) list items */
-li:last-child {
- border-right: none;
-}
-
-li a {
- display: block;
- color: grey;
- text-align: left;
- padding: 15px 17px;
- text-decoration: none;
- font-family:	Courier New;
-}
-
-/* Links will change color when hovered over */
-li a:hover {
- background-color: #FFFFFF;
-}
-
-.active {
- background-color: #FFFFFF;
+/**
+* Create a position for the map
+* on the page */
+#map {
+  position: absolute;
+  top: 200px;
+  bottom: 0;
+  height: 800px;
+  width: 100%;
 }
 
 /**
@@ -72,7 +56,7 @@ li a:hover {
 
 #features {
   top: 200px;
-  height: 200px;
+  height: 100px;
   margin-top: 20px;
   width: 250px;
 }
@@ -92,4 +76,41 @@ li a:hover {
   width: 10px;
   height: 10px;
   margin-right: 5px;
+}
+
+ul {
+ list-style-type: none;
+ margin: 1px;
+ padding: 1px;
+ overflow: hidden;
+ background-color: white;
+}
+
+li {
+ float: left;
+ border-right: 2px solid white;
+ font-family:	Courier New;
+}
+
+/* Add a border to all( but not the last) list items */
+li:last-child {
+ border-right: none;
+}
+
+li a {
+ display: block;
+ color: black;
+ text-align: left;
+ padding: 15px 17px;
+ text-decoration: none;
+ font-family:	Courier New;
+}
+
+/* Links will change color when hovered over */
+li a:hover {
+ background-color: #a09f9f;
+}
+
+.active {
+ background-color: #a09f9f;
 }

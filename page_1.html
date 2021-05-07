@@ -100,8 +100,16 @@
       // wait for map to load before adjusting it
       map.on('load', function () {
         // make a pointer cursor
-        map.getCanvas().style.cursor = 'default'
+        map.getCanvas().style.cursor = 'default';
+
+        // set map bounds to the continental US
+        map.fitBounds([
+          [-133.2421875, 16.972741],
+          [-47.63671875, 52.696361]
         ]);
+
+        // make a pointer cursor
+        map.getCanvas().style.cursor = 'default';
         
         // make list of legend values
         var layers = ['0-10', 

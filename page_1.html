@@ -108,24 +108,20 @@
 
         // define layer names
         var layers = [
-          '0-10',
-          '10-20',
-          '20-50',
-          '50-100',
-          '100-200',
-          '200-500',
-          '500-1000',
-          '1000+'
+          '0 - 31,952',
+          '31,953 - 60,000',
+          '61,000 - 120,000',
+          '120,001 - 1,013,244',
+          '1,013,244 - 1,906,488',
+          '1,906,489 - 2,531,333'
         ];
         var colors = [
-          '#FFEDA0',
-          '#FED976',
-          '#FEB24C',
-          '#FD8D3C',
-          '#FC4E2A',
-          '#E31A1C',
-          '#BD0026',
-          '#800026'
+          '#fdedba',
+          '#f4d134',
+          '#fa9638',
+          '#fc5603',
+          '#eb0a0a',
+          '#920101'
         ];
 
         // create legend
@@ -155,7 +151,7 @@
               '<h3><strong>' +
               states[0].properties.STATE_NAME +
               '</strong></h3><p><strong><em>' +
-              states[0].properties.AGE_UNDER5 +
+              states[0].properties.FID +
               '</strong> # of toddlers</em></p>';
           } else {
             document.getElementById('pd').innerHTML =

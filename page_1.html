@@ -136,7 +136,6 @@
           var key = document.createElement('span');
           key.className = 'legend-key';
           key.style.backgroundColor = colors;
-
           var value = document.createElement('span');
           value.innerHTML = layer;
           item.appendChild(key);
@@ -155,7 +154,7 @@
               '<h3><strong>' +
               states[0].properties.STATE_NAME +
               '</strong></h3><p><strong><em>' +
-              states[0].properties.STATE_FIPS +
+              states[0].properties.AGE_UNDER5 +
               '</strong> # of toddlers</em></p>';
           } else {
             document.getElementById('pd').innerHTML =

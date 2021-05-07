@@ -102,41 +102,40 @@
         // make a pointer cursor
         map.getCanvas().style.cursor = 'default'
         ]);
-
-
-        // define layer names
-        var layers = [
-          '0 - 31,952',
-          '31,953 - 60,000',
-          '61,000 - 120,000',
-          '120,001 - 1,013,244',
-          '1,013,244 - 1,906,488',
-          '1,906,489 - 2,531,333'
-        ];
-        var colors = [
-          '#fdedba',
-          '#f4d134',
-          '#fa9638',
-          '#fc5603',
-          '#eb0a0a',
-          '#920101'
-        ];
-
-        // create legend
+        
+        // make list of legend values
+        var layers = ['0-10', 
+                      '10-20', 
+                      '20-50',
+                      '50-100', 
+                      '100-200', 
+                      '200-500'
+                     ];
+        var colors = ['#FFEDA0',
+                      '#FED976', 
+                      '#FEB24C',
+                      '#FD8D3C', 
+                      '#FC4E2A', 
+                      '#E31A1C', 
+                      '#BD0026', 
+                      '#800026'
+                     ];
+        
+        // join the two lists in a panel
         for (i = 0; i < layers.length; i++) {
           var layer = layers[i];
           var color = colors[i];
           var item = document.createElement('div');
           var key = document.createElement('span');
           key.className = 'legend-key';
-          key.style.backgroundColor = colors;
+          key.style.backgroundColor = color;
           var value = document.createElement('span');
           value.innerHTML = layer;
           item.appendChild(key);
           item.appendChild(value);
           legend.appendChild(item);
         }
-
+        
         // change info window on hover
         map.on('mousemove', function (e) {
           var states = map.queryRenderedFeatures(e.point, {

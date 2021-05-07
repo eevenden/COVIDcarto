@@ -42,7 +42,7 @@
       }
       #features {
         top: 200px;
-        height: 100px;
+        height: 150px;
         margin-top: 20px;
         width: 250px;
       }
@@ -50,8 +50,8 @@
         padding: 10px;
         box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
         line-height: 18px;
-        height: 150px;
-        margin-bottom: 40px;
+        height: 125px;
+        margin-bottom: 10px;
         width: 100px;
       }
       .legend-key {
@@ -65,7 +65,7 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <h1>Studio Week 3</h1>
+    <h1>COVIDcarto</h1>
     <!-- Add multiple pages to web page-->
     <!-- active class displays the grey box around current page-->
     <ul>
@@ -155,8 +155,8 @@
               '<h3><strong>' +
               states[0].properties.STATE_NAME +
               '</strong></h3><p><strong><em>' +
-              states[0].properties.UNDER_AGE5 +
-              '</strong> people per square mile</em></p>';
+              states[0].properties.AGE_UNDER5 +
+              '</strong> # of toddlers</em></p>';
           } else {
             document.getElementById('pd').innerHTML =
               '<p>Hover over a state!</p>';

@@ -14,13 +14,13 @@
       h2,
       h3 {
         margin: 10px;
-        font-size: 1.2em;
+        font-size: 2em;
       }
       h3 {
-        font-size: 1em;
+        font-size: 2em;
       }
       p {
-        font-size: 0.85em;
+        font-size: 1.5em;
         margin: 10px;
         text-align: left;
       }
@@ -110,23 +110,23 @@
 
         // make a pointer cursor
         map.getCanvas().style.cursor = 'default';
-        
+
         // make list of legend values
-        var layers = ['0 - 31,952', 
-                      '31,952 - 60,000', 
+        var layers = ['0 - 31,952',
+                      '31,952 - 60,000',
                       '60,000 - 120,000',
-                      '120,001 - 1,013,244', 
-                      '1,013,245 - 1,906,488', 
+                      '120,001 - 1,013,244',
+                      '1,013,245 - 1,906,488',
                       '1,906,489 - 2,531,333'
                      ];
         var colors = ['#fdedba',
-                      '#f4d134', 
+                      '#f4d134',
                       '#fa9638',
-                      '#fc5603', 
-                      '#eb0a0a', 
+                      '#fc5603',
+                      '#eb0a0a',
                       '#920101'
                      ];
-        
+
         // join the two lists in a panel
         for (i = 0; i < layers.length; i++) {
           var layer = layers[i];
@@ -141,7 +141,7 @@
           item.appendChild(value);
           legend.appendChild(item);
         }
-        
+
         // change info window on hover
         map.on('mousemove', function (e) {
           var states = map.queryRenderedFeatures(e.point, {
